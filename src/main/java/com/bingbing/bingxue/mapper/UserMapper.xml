@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>   
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.bingbing.bingxue.dao.UserDAO">  
+<mapper namespace="com.bingbing.bingxue.mapper.UserMapper">  
 
-	<select id="select" parameterType="com.bingbing.bingxue.entity.User" resultType="com.bingbing.bingxue.entity.User">
+	<select id="select" parameterType="User" resultType="User">
 		select 
 		id , name ,nickname ,age ,birthday , mobile , id_no as idNo , is_valid as isValid , 
 		creat_date as creatDate , update_date as updateDate , creat_user as creatUser , update_user as updateUser

@@ -1,11 +1,11 @@
-package com.bingbing.bingxue.dao;
+package com.bingbing.bingxue.mapper;
 
 import java.util.List;
 
 import com.bingbing.bingxue.entity.Card;
 import com.bingbing.bingxue.entity.User;
 
-public interface CardDAO {
+public interface CardMapper {
 
 	/**
 	 * 新增单个卡

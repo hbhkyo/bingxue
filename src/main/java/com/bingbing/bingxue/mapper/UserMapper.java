@@ -1,10 +1,10 @@
-package com.bingbing.bingxue.dao;
+package com.bingbing.bingxue.mapper;
 
 import java.util.List;
 
 import com.bingbing.bingxue.entity.User;
 
-public interface UserDAO {
+public interface UserMapper {
 	/**
 	 * 新增单个用户
 	 * @param user

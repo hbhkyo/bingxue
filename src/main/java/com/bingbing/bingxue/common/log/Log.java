@@ -9,7 +9,7 @@ public class Log {
 	public static void info(String msg){
 		log.info(getAction() + msg);
 	}
- 
+	
 	public static void error(String msg){
 		log.error(getAction() + msg);
 	}
