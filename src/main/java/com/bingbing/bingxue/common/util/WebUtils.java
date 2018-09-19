@@ -11,14 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class WebUtils {
 	
-	/**
-	 * 生成输出到客户端浏览器的HTML(自动post相关参数到相关地址)
-	 * 
-	 * @param url post目标地址
-	 * @param parameters  需要post的参数名字和值
-	 * @param charset 编码
-	 * @return
-	 */
 	public static String genForwardHtml(String url, Map<String, String> parameters, String charset) {
 		StringBuffer returnHtml = new StringBuffer("");
 			returnHtml.append("<html>");

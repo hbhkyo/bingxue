@@ -16,13 +16,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 
 public class RsaUtils {
 
-    /**
-     * 签名
-     * @param privateKey  私钥字符串
-     * @param content     明文
-     * @return            密文
-     * @throws Exception
-     */
     public static String sign(String privateKey,String content){
         try {
 			Signature signature = Signature.getInstance("SHA256withRSA");
@@ -34,15 +27,7 @@ public class RsaUtils {
 		}
         return null;
     }
-
-    /**
-     * 验签
-     * @param publicKey   公钥字符串
-     * @param content     明文报文
-     * @param signStr     签名字符串
-     * @return            验签结果
-     * @throws Exception
-     */
+    
     public static boolean vertify(String publicKey,String content,String signStr){
         try {
 			Signature signature = Signature.getInstance("SHA256withRSA");
@@ -55,13 +40,6 @@ public class RsaUtils {
         return false;
     }
 
-    /**
-     * RSA公钥加密
-     * @param publicKey  公钥字符串
-     * @param content    明文
-     * @return           密文
-     * @throws Exception
-     */
     public static String encryptByPublicKey(String publicKey,String content){
         try {
             Cipher cipher = Cipher.getInstance("RSA");
@@ -74,13 +52,6 @@ public class RsaUtils {
         return null;
     }
 
-    /**
-     * RSA私钥解密
-     * @param privateKey    机构私钥字符串
-     * @param content       密文
-     * @return              明文
-     * @throws Exception
-     */
     public static String decryptByPrivateKey(String privateKey,String content){
         try {
             Cipher cipher = Cipher.getInstance("RSA");

@@ -11,22 +11,8 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.io.xml.XmlFriendlyNameCoder;
 
-/**
- * 
- * Title:XStream输出xml和解析xml的工具类
- * Description: 
- * Company: fuiou
- * @author hubh
- * @date 2018年1月4日 下午5:30:38
- */
 public class XmlUtils {
 
-	/**
-	 * 对象转XML
-	 * 
-	 * @param obj
-	 * @return
-	 */
 	public static String obj2xml(Object obj) {
 		XStream xstream = new XStream(new DomDriver("UTF-8",
 				new XmlFriendlyNameCoder("-_", "_")));
@@ -34,13 +20,6 @@ public class XmlUtils {
 		return xstream.toXML(obj);
 	}
 
-	/**
-	 * xml转对象
-	 * 
-	 * @param xmlStr
-	 * @param cls
-	 * @return
-	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T xml2obj(String xmlStr, Class<T> cls) {
 		XStream xstream = new XStream(new DomDriver("UTF-8",
@@ -50,13 +29,6 @@ public class XmlUtils {
 		return obj;
 	}
 
-	/**
-	 * 对象写到XML文件
-	 * 
-	 * @param obj
-	 * @param absPath
-	 * @param fileName
-	 */
 	public static void obj2xmlFile(Object obj, String absPath, String fileName) {
 		String strXml = obj2xml(obj);
 		String filePath = absPath + fileName;
@@ -85,14 +57,6 @@ public class XmlUtils {
 		}
 	}
 
-	/**
-	 * 读XML文件到对象
-	 * 
-	 * @param absPath
-	 * @param fileName
-	 * @param cls
-	 * @return
-	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T xml2objFromFile(String absPath, String fileName,
 			Class<T> cls) {
