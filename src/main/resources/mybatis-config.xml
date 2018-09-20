@@ -9,6 +9,7 @@
   
   <typeAliases>
 		<typeAlias alias="User" type="com.bingbing.bingxue.entity.User" />
+		<typeAlias alias="Card" type="com.bingbing.bingxue.entity.Card" />
 	</typeAliases>
 
 </configuration>

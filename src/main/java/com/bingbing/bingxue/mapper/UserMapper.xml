@@ -3,10 +3,26 @@
     
 <mapper namespace="com.bingbing.bingxue.mapper.UserMapper">  
 
-	<select id="select" parameterType="User" resultType="User">
+
+<resultMap id="userResultMap" type="User">
+  <id property="id" column="id" />
+  <result property="name" column="name"/>
+  <result property="nickname" column="nickname"/>
+  <result property="age" column="age"/>
+  <result property="birthday" column="birthday"/>
+  <result property="mobile" column="mobile"/>
+  <result property="idNo" column="id_no"/>
+  <result property="isValid" column="is_valid"/>
+  <result property="creatDate" column="creat_date"/>
+  <result property="updateDate" column="update_date"/>
+  <result property="creatUser" column="creat_user"/>
+  <result property="updateUser" column="update_user"/>
+</resultMap>
+
+	<select id="select" parameterType="User" resultMap="userResultMap">
 		select 
-		id , name ,nickname ,age ,birthday , mobile , id_no as idNo , is_valid as isValid , 
-		creat_date as creatDate , update_date as updateDate , creat_user as creatUser , update_user as updateUser
+		id , name ,nickname ,age ,birthday , mobile , id_no , is_valid  , 
+		creat_date  , update_date  , creat_user  , update_user 
 		from t_user_info where mobile = #{mobile}
 	</select>
 	
