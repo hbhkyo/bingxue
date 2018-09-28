@@ -104,6 +104,6 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", nickname=" + nickname + ", age=" + age + ", birthday="
 				+ birthday + ", mobile=" + mobile + ", idNo=" + idNo + ", isValid=" + isValid + ", creatUser="
 				+ creatUser + ", updateUser=" + updateUser + ", creatDate=" + creatDate + ", updateDate=" + updateDate
-				+ "]";
+				+ ", cards=" + cards + "]";
 	}
 }

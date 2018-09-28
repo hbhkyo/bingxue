@@ -1,29 +1,118 @@
 <?xml version="1.0" encoding="UTF-8" ?>   
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-<mapper namespace="com.bingbing.bingxue.mapper.UserMapper">  
 
+<mapper namespace="com.bingbing.bingxue.mapper.UserMapper">
 
-<resultMap id="userResultMap" type="User">
-  <id property="id" column="id" />
-  <result property="name" column="name"/>
-  <result property="nickname" column="nickname"/>
-  <result property="age" column="age"/>
-  <result property="birthday" column="birthday"/>
-  <result property="mobile" column="mobile"/>
-  <result property="idNo" column="id_no"/>
-  <result property="isValid" column="is_valid"/>
-  <result property="creatDate" column="creat_date"/>
-  <result property="updateDate" column="update_date"/>
-  <result property="creatUser" column="creat_user"/>
-  <result property="updateUser" column="update_user"/>
-</resultMap>
-
+	<!-- <resultMap id="userResultMap" type="User">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="nickname" column="nickname" />
+		<result property="age" column="age" />
+		<result property="birthday" column="birthday" />
+		<result property="mobile" column="mobile" />
+		<result property="idNo" column="id_no" />
+		<result property="isValid" column="is_valid" />
+		<result property="creatDate" column="creat_date" />
+		<result property="updateDate" column="update_date" />
+		<result property="creatUser" column="creat_user" />
+		<result property="updateUser" column="update_user" />
+	</resultMap>
 	<select id="select" parameterType="User" resultMap="userResultMap">
-		select 
-		id , name ,nickname ,age ,birthday , mobile , id_no , is_valid  , 
-		creat_date  , update_date  , creat_user  , update_user 
-		from t_user_info where mobile = #{mobile}
+		select id , name ,nickname ,age ,birthday , mobile , id_no , is_valid ,creat_date, update_date , creat_user , update_user
+		from t_user_info 
+		where mobile = #{mobile}
+	</select> -->
+
+	<!-- <resultMap id="userResultMap" type="User">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="nickname" column="nickname" />
+		<result property="age" column="age" />
+		<result property="birthday" column="birthday" />
+		<result property="mobile" column="mobile" />
+		<result property="idNo" column="id_no" />
+		<result property="isValid" column="is_valid" />
+		<result property="creatDate" column="creat_date" />
+		<result property="updateDate" column="update_date" />
+		<result property="creatUser" column="creat_user" />
+		<result property="updateUser" column="update_user" />
+		一对多
+		<collection property="cards" ofType="Card">
+    		<id property="id" column="card_id"/>
+   			<result property="userId" column="card_user_id"/>
+   			<result property="cardNo" column="card_card_no"/>
+   			<result property="cardName" column="card_card_name"/>
+   			<result property="amt" column="card_amt"/>
+   			<result property="isValid" column="card_is_valid"/>
+   			<result property="creatDate" column="card_creat_date" />
+			<result property="updateDate" column="card_update_date" />
+			<result property="creatUser" column="card_creat_user" />
+			<result property="updateUser" column="card_update_user" />
+  		</collection>
+  		一对一
+  		<association property="card" javaType="Card">
+    		<id property="id" column="card_id"/>
+   			<result property="userId" column="card_user_id"/>
+   			<result property="cardNo" column="card_card_no"/>
+   			<result property="cardName" column="card_card_name"/>
+   			<result property="amt" column="card_amt"/>
+   			<result property="isValid" column="card_is_valid"/>
+   			<result property="creatDate" column="card_creat_date" />
+			<result property="updateDate" column="card_update_date" />
+			<result property="creatUser" column="card_creat_user" />
+			<result property="updateUser" column="card_update_user" />
+ 		 </association>
+	</resultMap> -->
+	
+	<resultMap id="userResultMap" type="User">
+ 		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="nickname" column="nickname" />
+		<result property="age" column="age" />
+		<result property="birthday" column="birthday" />
+		<result property="mobile" column="mobile" />
+		<result property="idNo" column="id_no" />
+		<result property="isValid" column="is_valid" />
+		<result property="creatDate" column="creat_date" />
+		<result property="updateDate" column="update_date" />
+		<result property="creatUser" column="creat_user" />
+		<result property="updateUser" column="update_user" />
+		<!-- 一对多 -->
+ 		<collection property="cards" ofType="Card" resultMap="cardResultMap" columnPrefix="card_"/>
+ 		<!-- 一对一 -->
+ 		<!-- <association property="card" column="user_id" javaType="Card" resultMap="cardResultMap" columnPrefix="card_"/> -->
+	</resultMap>
+
+	<resultMap id="cardResultMap" type="Card">
+	    <id property="id" column="id"/>
+	    <result property="userId" column="user_id"/>
+		<result property="cardNo" column="card_no"/>
+		<result property="cardName" column="card_name"/>
+		<result property="amt" column="amt"/>
+		<result property="isValid" column="is_valid"/>
+		<result property="creatDate" column="creat_date" />
+		<result property="updateDate" column="update_date" />
+		<result property="creatUser" column="creat_user" />
+		<result property="updateUser" column="update_user" />
+	</resultMap>
+	
+	<select id="select" parameterType="User" resultMap="userResultMap">
+		select user.id , user.name ,user.nickname ,user.age ,user.birthday , user.mobile , user.id_no , user.is_valid ,
+		user.creat_date, user.update_date , user.creat_user , user.update_user ,
+		card.id as card_id , card.user_id as card_user_id ,card.card_no as card_card_no ,card.card_name as card_card_name ,
+		card.amt as card_amt ,card.is_valid as card_is_valid ,card.creat_date as card_creat_date ,
+		card.update_date as card_update_date ,card.creat_user as card_creat_user ,card.update_user as card_update_user
+		from t_user_info user , t_card_info card
+		where user.id = card.user_id and user.mobile = #{mobile}
+		<if test="name != null">
+    		and user.name like #{name}
+  		</if>
 	</select>
+	
+	<!-- 动态SQL。
+	if
+	choose (when, otherwise)
+	trim (where, set)
+	foreach -->
 	
 </mapper>

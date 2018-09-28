@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>   
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-<mapper namespace="com.bingbing.bingxue.mapper.CardMapper">  
 
-	<!-- useGeneratedKeys="true" keyProperty="id"  返回自动生成的主键ID到参数对象。后面可以在对象里面取到 -->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="Card">
-	  insert into t_card_info  
-	  (user_id, card_no, card_name, amt , is_valid , creat_date ,  update_date , creat_user , update_user)
-	   values
-	  (#{userId}, #{cardNo}, #{cardName}, #{amt},
-	   #{isValid}, #{creatDate}, #{updateDate}, #{creatUser}, #{updateUser}
-	   )
-	</insert>	
-	
-	<insert id="insertList" useGeneratedKeys="true" keyProperty="id"  parameterType="java.util.ArrayList">
-	  insert into t_card_info  
-	  (user_id, card_no, card_name, amt , is_valid , creat_date ,  update_date , creat_user , update_user)
-	   values
-	  <foreach item="card" collection="list" separator=",">
-	  (#{card.userId}, #{card.cardNo}, #{card.cardName}, #{card.amt},
-	   #{card.isValid}, #{card.creatDate}, #{card.updateDate}, #{card.creatUser}, #{card.updateUser}
-	   )
-	  </foreach>
-	</insert>	
-	
-	
+<mapper namespace="com.bingbing.bingxue.mapper.CardMapper">
+
+	<!-- useGeneratedKeys="true" keyProperty="id" 返回自动生成的主键ID到参数对象。后面可以在对象里面取到  -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Card">
+		insert into t_card_info
+		(user_id, card_no, card_name, amt , is_valid , creat_date , update_date ,creat_user , update_user)
+		values
+		(#{userId}, #{cardNo}, #{cardName}, #{amt},#{isValid}, #{creatDate}, #{updateDate}, #{creatUser}, #{updateUser})
+	</insert>
+
+	<insert id="insertList" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.ArrayList">
+		insert into t_card_info
+		(user_id, card_no, card_name, amt , is_valid , creat_date , update_date ,creat_user , update_user)
+		values
+		<foreach item="card" collection="list" separator=",">
+		(#{card.userId}, #{card.cardNo}, #{card.cardName}, #{card.amt},#{card.isValid}, #{card.creatDate}, #{card.updateDate},#{card.creatUser}, #{card.updateUser})
+		</foreach>
+	</insert>
+
+
 </mapper>
