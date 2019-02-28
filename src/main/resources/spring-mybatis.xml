@@ -51,9 +51,9 @@ http://www.springframework.org/schema/aop/spring-aop.xsd ">
 	<!-- 拦截器方式配置事物 -->
 	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="insert*" propagation="REQUIRED" />
-			<tx:method name="update*" propagation="REQUIRED" />
-			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" rollback-for="com.bingbing.bingxue.common.exception.BusinessException" />
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="com.bingbing.bingxue.common.exception.BusinessException"/>
+			<tx:method name="delete*" propagation="REQUIRED" rollback-for="com.bingbing.bingxue.common.exception.BusinessException"/>
 			<tx:method name="select*" propagation="SUPPORTS" />
 			<tx:method name="*" propagation="SUPPORTS" />
 		</tx:attributes>

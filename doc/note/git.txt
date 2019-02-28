@@ -1,64 +1,64 @@
-1.ÏÂÔØ°²×°git
-2.ÉèÖÃÃû³ÆÓÊÏä
+1.ä¸‹è½½å®‰è£…git
+2.è®¾ç½®åç§°é‚®ç®±
 $ git config --global user.name "hbhkyo"
 $ git config --global user.email "hbhkyo@163.com"
-×¢Òâgit configÃüÁîµÄ--global²ÎÊı£¬ÓÃÁËÕâ¸ö²ÎÊı£¬
-±íÊ¾ÄãÕâÌ¨»úÆ÷ÉÏËùÓĞµÄGit²Ö¿â¶¼»áÊ¹ÓÃÕâ¸öÅäÖÃ£¬µ±È»Ò²¿ÉÒÔ¶ÔÄ³¸ö²Ö¿âÖ¸¶¨²»Í¬µÄÓÃ»§ÃûºÍEmailµØÖ·¡£
-3.½øÈë±¾µØÄ¿Â¼³õÊ¼»¯²Ö¿â
+æ³¨æ„git configå‘½ä»¤çš„--globalå‚æ•°ï¼Œç”¨äº†è¿™ä¸ªå‚æ•°ï¼Œ
+è¡¨ç¤ºä½ è¿™å°æœºå™¨ä¸Šæ‰€æœ‰çš„Gitä»“åº“éƒ½ä¼šä½¿ç”¨è¿™ä¸ªé…ç½®ï¼Œå½“ç„¶ä¹Ÿå¯ä»¥å¯¹æŸä¸ªä»“åº“æŒ‡å®šä¸åŒçš„ç”¨æˆ·åå’ŒEmailåœ°å€ã€‚
+3.è¿›å…¥æœ¬åœ°ç›®å½•åˆå§‹åŒ–ä»“åº“
 $ git init 
-µ±Ç°Ä¿Â¼ÏÂ¶àÁËÒ»¸ö.gitµÄÄ¿Â¼£¬Õâ¸öÄ¿Â¼ÊÇGitÀ´¸ú×Ù¹ÜÀí°æ±¾¿âµÄ
-4.Ìí¼ÓÎÄ¼ş²¢Ìá¼°µ½²Ö¿â
+å½“å‰ç›®å½•ä¸‹å¤šäº†ä¸€ä¸ª.gitçš„ç›®å½•ï¼Œè¿™ä¸ªç›®å½•æ˜¯Gitæ¥è·Ÿè¸ªç®¡ç†ç‰ˆæœ¬åº“çš„
+4.æ·»åŠ æ–‡ä»¶å¹¶æåŠåˆ°ä»“åº“
 $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
-5.ÉèÖÃÔ¶³Ì²Ö¿â
-$ ssh-keygen -t rsa -C "hbhkyo@example.com" Éú³Ékey
-ÔÚÓÃ»§Ö÷Ä¿Â¼ÀïÕÒµ½.sshÄ¿Â¼£¬ÀïÃæÓĞid_rsaºÍid_rsa.pubÁ½¸öÎÄ¼ş£¬
-ÕâÁ½¸ö¾ÍÊÇSSH KeyµÄÃØÔ¿¶Ô£¬id_rsaÊÇË½Ô¿£¬²»ÄÜĞ¹Â¶³öÈ¥£¬id_rsa.pubÊÇ¹«Ô¿
-µÇÂ½GitHub£¬´ò¿ªAccount settings£¬ÉèÖÃSSH Key£¬ÔÚKeyÎÄ±¾¿òÀïÕ³Ìùid_rsa.pubÎÄ¼şµÄÄÚÈİ.
-µÇÂ½GitHub£¬´´½¨Ò»¸öĞÂµÄ²Ö¿â
-6.¹ØÁªÔ¶³Ì²Ö¿âºÍ±¾µØ²Ö¿â
+5.è®¾ç½®è¿œç¨‹ä»“åº“
+$ ssh-keygen -t rsa -C "hbhkyo@example.com" ç”Ÿæˆkey
+åœ¨ç”¨æˆ·ä¸»ç›®å½•é‡Œæ‰¾åˆ°.sshç›®å½•ï¼Œé‡Œé¢æœ‰id_rsaå’Œid_rsa.pubä¸¤ä¸ªæ–‡ä»¶ï¼Œ
+è¿™ä¸¤ä¸ªå°±æ˜¯SSH Keyçš„ç§˜é’¥å¯¹ï¼Œid_rsaæ˜¯ç§é’¥ï¼Œä¸èƒ½æ³„éœ²å‡ºå»ï¼Œid_rsa.pubæ˜¯å…¬é’¥
+ç™»é™†GitHubï¼Œæ‰“å¼€Account settingsï¼Œè®¾ç½®SSH Keyï¼Œåœ¨Keyæ–‡æœ¬æ¡†é‡Œç²˜è´´id_rsa.pubæ–‡ä»¶çš„å†…å®¹.
+ç™»é™†GitHubï¼Œåˆ›å»ºä¸€ä¸ªæ–°çš„ä»“åº“
+6.å…³è”è¿œç¨‹ä»“åº“å’Œæœ¬åœ°ä»“åº“
 $ git remote add origin https://github.com/hbhkyo/bingxue
-7.±¾µØ²Ö¿âÍÆËÍµ½Ô¶³Ì²Ö¿âÉÏÃæ
-$ git push -u origin master  (-fÇ¿ÖÆÍÆ£¬Ç§ÍòĞ¡ĞÄ)
+7.æœ¬åœ°ä»“åº“æ¨é€åˆ°è¿œç¨‹ä»“åº“ä¸Šé¢
+$ git push -u origin master  (-få¼ºåˆ¶æ¨ï¼Œåƒä¸‡å°å¿ƒ)
 $ git push origin master 
-µ±ÄãµÚÒ»´ÎÊ¹ÓÃGitµÄclone»òÕßpushÃüÁîÁ¬½ÓGitHubÊ±£¬»áµÃµ½Ò»¸ö¾¯¸æ£º
-SSHÁ¬½ÓÔÚµÚÒ»´ÎÑéÖ¤GitHub·şÎñÆ÷µÄKeyÊ±£¬ĞèÒªÄãÈ·ÈÏGitHubµÄKeyµÄÖ¸ÎÆĞÅÏ¢ÊÇ·ñÕæµÄÀ´×ÔGitHubµÄ·şÎñÆ÷£¬ÊäÈëyes»Ø³µ¼´¿É¡£
-8.¿ËÂ¡Ô¶³Ì²Ö¿âµ½±¾µØ
+å½“ä½ ç¬¬ä¸€æ¬¡ä½¿ç”¨Gitçš„cloneæˆ–è€…pushå‘½ä»¤è¿æ¥GitHubæ—¶ï¼Œä¼šå¾—åˆ°ä¸€ä¸ªè­¦å‘Šï¼š
+SSHè¿æ¥åœ¨ç¬¬ä¸€æ¬¡éªŒè¯GitHubæœåŠ¡å™¨çš„Keyæ—¶ï¼Œéœ€è¦ä½ ç¡®è®¤GitHubçš„Keyçš„æŒ‡çº¹ä¿¡æ¯æ˜¯å¦çœŸçš„æ¥è‡ªGitHubçš„æœåŠ¡å™¨ï¼Œè¾“å…¥yeså›è½¦å³å¯ã€‚
+8.å…‹éš†è¿œç¨‹ä»“åº“åˆ°æœ¬åœ°
 $ git clone https://github.com/hbhkyo/bingxue
 
-²Î¿¼ÍøÕ¾£º
+å‚è€ƒç½‘ç«™ï¼š
 https://git-scm.com/book/zh/v2
-Git»ù±¾³£ÓÃÃüÁîÈçÏÂ£º
-mkdir£º         XX (´´½¨Ò»¸ö¿ÕÄ¿Â¼ XXÖ¸Ä¿Â¼Ãû)
-pwd£º          ÏÔÊ¾µ±Ç°Ä¿Â¼µÄÂ·¾¶¡£
-git init          °Ñµ±Ç°µÄÄ¿Â¼±ä³É¿ÉÒÔ¹ÜÀíµÄgit²Ö¿â£¬Éú³ÉÒş²Ø.gitÎÄ¼ş¡£
-git add XX       °ÑxxÎÄ¼şÌí¼Óµ½Ôİ´æÇøÈ¥¡£
-git commit ¨Cm ¡°XX¡±  Ìá½»ÎÄ¼ş ¨Cm ºóÃæµÄÊÇ×¢ÊÍ¡£
-git status        ²é¿´²Ö¿â×´Ì¬
-git diff  XX      ²é¿´XXÎÄ¼şĞŞ¸ÄÁËÄÇĞ©ÄÚÈİ
-git log          ²é¿´ÀúÊ·¼ÇÂ¼
-git reset  --hard HEAD^ »òÕß git reset  --hard HEAD~ »ØÍËµ½ÉÏÒ»¸ö°æ±¾
-(Èç¹ûÏë»ØÍËµ½100¸ö°æ±¾£¬Ê¹ÓÃgit reset ¨Chard HEAD~100 )
-cat XX         ²é¿´XXÎÄ¼şÄÚÈİ
-git reflog       ²é¿´ÀúÊ·¼ÇÂ¼µÄ°æ±¾ºÅid
-git checkout -- XX  °ÑXXÎÄ¼şÔÚ¹¤×÷ÇøµÄĞŞ¸ÄÈ«²¿³·Ïú¡£
-git rm XX          É¾³ıXXÎÄ¼ş
-git remote add origin https://github.com/tugenhua0707/testgit ¹ØÁªÒ»¸öÔ¶³Ì¿â
-git push ¨Cu(µÚÒ»´ÎÒªÓÃ-u ÒÔºó²»ĞèÒª) origin master °Ñµ±Ç°master·ÖÖ§ÍÆËÍµ½Ô¶³Ì¿â
-git clone https://github.com/tugenhua0707/testgit  ´ÓÔ¶³Ì¿âÖĞ¿ËÂ¡
-git checkout ¨Cb dev  ´´½¨dev·ÖÖ§ ²¢ÇĞ»»µ½dev·ÖÖ§ÉÏ
-git branch  ²é¿´µ±Ç°ËùÓĞµÄ·ÖÖ§
-git checkout master ÇĞ»»»Ømaster·ÖÖ§
-git merge dev    ÔÚµ±Ç°µÄ·ÖÖ§ÉÏºÏ²¢dev·ÖÖ§
-git branch ¨Cd dev É¾³ıdev·ÖÖ§
-git branch name  ´´½¨·ÖÖ§
-git stash °Ñµ±Ç°µÄ¹¤×÷Òş²ØÆğÀ´ µÈÒÔºó»Ö¸´ÏÖ³¡ºó¼ÌĞø¹¤×÷
-git stash list ²é¿´ËùÓĞ±»Òş²ØµÄÎÄ¼şÁĞ±í
-git stash apply »Ö¸´±»Òş²ØµÄÎÄ¼ş£¬µ«ÊÇÄÚÈİ²»É¾³ı
-git stash drop É¾³ıÎÄ¼ş
-git stash pop »Ö¸´ÎÄ¼şµÄÍ¬Ê± Ò²É¾³ıÎÄ¼ş
-git remote ²é¿´Ô¶³Ì¿âµÄĞÅÏ¢
-git remote ¨Cv ²é¿´Ô¶³Ì¿âµÄÏêÏ¸ĞÅÏ¢
-git push origin master  Git»á°Ñmaster·ÖÖ§ÍÆËÍµ½Ô¶³Ì¿â¶ÔÓ¦µÄÔ¶³Ì·ÖÖ§ÉÏ
+GitåŸºæœ¬å¸¸ç”¨å‘½ä»¤å¦‚ä¸‹ï¼š
+mkdirï¼š         XX (åˆ›å»ºä¸€ä¸ªç©ºç›®å½• XXæŒ‡ç›®å½•å)
+pwdï¼š          æ˜¾ç¤ºå½“å‰ç›®å½•çš„è·¯å¾„ã€‚
+git init          æŠŠå½“å‰çš„ç›®å½•å˜æˆå¯ä»¥ç®¡ç†çš„gitä»“åº“ï¼Œç”Ÿæˆéšè—.gitæ–‡ä»¶ã€‚
+git add XX       æŠŠxxæ–‡ä»¶æ·»åŠ åˆ°æš‚å­˜åŒºå»ã€‚
+git commit â€“m â€œXXâ€  æäº¤æ–‡ä»¶ â€“m åé¢çš„æ˜¯æ³¨é‡Šã€‚
+git status        æŸ¥çœ‹ä»“åº“çŠ¶æ€
+git diff  XX      æŸ¥çœ‹XXæ–‡ä»¶ä¿®æ”¹äº†é‚£äº›å†…å®¹
+git log          æŸ¥çœ‹å†å²è®°å½•
+git reset  --hard HEAD^ æˆ–è€… git reset  --hard HEAD~ å›é€€åˆ°ä¸Šä¸€ä¸ªç‰ˆæœ¬
+(å¦‚æœæƒ³å›é€€åˆ°100ä¸ªç‰ˆæœ¬ï¼Œä½¿ç”¨git reset â€“hard HEAD~100 )
+cat XX         æŸ¥çœ‹XXæ–‡ä»¶å†…å®¹
+git reflog       æŸ¥çœ‹å†å²è®°å½•çš„ç‰ˆæœ¬å·id
+git checkout -- XX  æŠŠXXæ–‡ä»¶åœ¨å·¥ä½œåŒºçš„ä¿®æ”¹å…¨éƒ¨æ’¤é”€ã€‚
+git rm XX          åˆ é™¤XXæ–‡ä»¶
+git remote add origin https://github.com/tugenhua0707/testgit å…³è”ä¸€ä¸ªè¿œç¨‹åº“
+git push â€“u(ç¬¬ä¸€æ¬¡è¦ç”¨-u ä»¥åä¸éœ€è¦) origin master æŠŠå½“å‰masteråˆ†æ”¯æ¨é€åˆ°è¿œç¨‹åº“
+git clone https://github.com/tugenhua0707/testgit  ä»è¿œç¨‹åº“ä¸­å…‹éš†
+git checkout â€“b dev  åˆ›å»ºdevåˆ†æ”¯ å¹¶åˆ‡æ¢åˆ°devåˆ†æ”¯ä¸Š
+git branch  æŸ¥çœ‹å½“å‰æ‰€æœ‰çš„åˆ†æ”¯
+git checkout master åˆ‡æ¢å›masteråˆ†æ”¯
+git merge dev    åœ¨å½“å‰çš„åˆ†æ”¯ä¸Šåˆå¹¶devåˆ†æ”¯
+git branch â€“d dev åˆ é™¤devåˆ†æ”¯
+git branch name  åˆ›å»ºåˆ†æ”¯
+git stash æŠŠå½“å‰çš„å·¥ä½œéšè—èµ·æ¥ ç­‰ä»¥åæ¢å¤ç°åœºåç»§ç»­å·¥ä½œ
+git stash list æŸ¥çœ‹æ‰€æœ‰è¢«éšè—çš„æ–‡ä»¶åˆ—è¡¨
+git stash apply æ¢å¤è¢«éšè—çš„æ–‡ä»¶ï¼Œä½†æ˜¯å†…å®¹ä¸åˆ é™¤
+git stash drop åˆ é™¤æ–‡ä»¶
+git stash pop æ¢å¤æ–‡ä»¶çš„åŒæ—¶ ä¹Ÿåˆ é™¤æ–‡ä»¶
+git remote æŸ¥çœ‹è¿œç¨‹åº“çš„ä¿¡æ¯
+git remote â€“v æŸ¥çœ‹è¿œç¨‹åº“çš„è¯¦ç»†ä¿¡æ¯
+git push origin master  Gitä¼šæŠŠmasteråˆ†æ”¯æ¨é€åˆ°è¿œç¨‹åº“å¯¹åº”çš„è¿œç¨‹åˆ†æ”¯ä¸Š
 git pull --rebase origin master

@@ -1,0 +1,47 @@
+拷贝文件夹
+把当前文件夹temp拷贝到 目标服务器192.168.1.2 服务器的 /temp文件夹
+scp -r /temp/ user@192.168.1.2:/temp
+其中user是目标服务器的用户名，执行命令提示输入密码，然后输入密码即可
+拷贝文件
+把当前文件temp.txt拷贝到 目标服务器192.168.1.2 服务器的 /temp文件夹下
+scp  temp.txt user@192.168.1.2:/temp
+其中user是目标服务器的用户名，执行命令提示输入密码，然后输入密码即可
+
+打包
+tar cvf target.tar origin
+解包
+tar xvf target.tar
+
+复制
+cp origin target
+
+查看文件
+less file.txt   G最后  / ? 搜索
+tail -n 100 -f file.txt
+grep -n keyword file.txt 搜索	
+
+查看user用户的java进程
+ps -ef |grep java |grep user
+杀进程
+kill -9 pid
+
+删除文件
+rm -rf file  强制删除
+
+编辑文件
+vi file   i编辑模式 esc退出编辑模式  :wq!强制保存退出  :q!强制退出
+
+移动文件
+mv origin target
+
+查看端口
+netstat -tln | grep 8080
+查看端口属于哪个程序
+lsof -i :8080
+远程telnet
+telnet IP PORT
+
+
+
+
+

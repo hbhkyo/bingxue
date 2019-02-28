@@ -70,6 +70,7 @@ jhat:虚拟机堆转储快照分析工具(不实用，每可视化分析工具�
 jstack:java堆栈跟踪工具 jstack -l 4604
 2.可视化分析工具 VisualVM JConsole Eclipse插件Memory Analyzer Tool(MAT)
 3.HSDIS：JIT生成代码反汇编。生成汇编代码。
+
 第五章 调优案列分析与实战
 案列1：64位虚拟机变更成32位虚拟机集群。
 高性能硬件部署，通过64位虚拟机来使用大内存 通过若干个32位虚拟机建立集群逻辑来利用硬件资源。
@@ -87,7 +88,11 @@ jstack:java堆栈跟踪工具 jstack -l 4604
 
 第三部分： 虚拟机执行子系统 
 第六章 类文件结构
+
 第七章 虚拟机类加载机制
+启动类加载器 bootstrap classload --  extension classload  --  application classload  --  user classload 
+双亲委托类加载模式，都会先上传递加载。
+
 第八章 虚拟机字节码执行引擎
 第九章 类加载及执行子系统的案列与实战
 java逆向移植 JDK1.5写的代码放到1.4，1.3上面部署。
@@ -132,7 +137,24 @@ java与线程
 线程是比进程更轻量级的调度执行单位，可以把进程的资源与调度分开，各个线程可以共享进程资源(内存，IO)，又可以独立调度(CPU)
 
 第十三章 线程安全与锁优化
+加同步  比较交换CAS ABA问题  
 
+
+CPU最高
+top -Hp pid
+
+16进制转换
+printf "%x\n" tid
+
+堆栈
+./jstack pid |grep tid
+
+
+数量大小
+./jmap -histo 18372|grep fuiou |sort -k 2 -g -r|less
+
+内存大小
+./jmap -histo 18372|head -10
 
 
 
