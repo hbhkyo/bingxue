@@ -1,8 +1,6 @@
 package com.bingbing.bingxue.common.util;
 
-import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -11,13 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 public class WebUtils {
 	
-	public static String genForwardHtml(String url, Map<String, String> parameters, String charset) {
+	public static String bulidHtml(String url, Map<String, String> parameters) {
 		StringBuffer returnHtml = new StringBuffer("");
 			returnHtml.append("<html>");
-			String head = "<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + charset
-					+ "\" pageEncoding=\"" + charset + "\" />";
+			String head = "<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + "UTF-8"
+					+ "\" pageEncoding=\"" + "UTF-8" + "\" />";
 			returnHtml.append(head);
-			returnHtml.append("<title>loading</title>");
 			returnHtml.append("<style type=\"text/css\">");
 			returnHtml.append("body{margin:200px auto;font-family: \"宋体\", Arial;font-size: 12px;color: #369;text-align: center;}");
 			returnHtml.append("#1{height:auto; width:78px; margin:0 auto;}");
@@ -44,13 +41,6 @@ public class WebUtils {
 		return returnHtml.toString();
 	}
 	
-	/**
-	 * response返回String
-	 * @param response
-	 * @param result
-	 * @throws IOException
-	 * @throws UnsupportedEncodingException
-	 */
 	public static void write(HttpServletResponse response, String result) {
 		try {
 			OutputStream out = response.getOutputStream();
@@ -61,26 +51,4 @@ public class WebUtils {
 			e.printStackTrace();
 		}
 	}
-	
-	/**
-	 * response返回byte[]
-	 * @param response
-	 * @param result
-	 * @throws IOException
-	 * @throws UnsupportedEncodingException
-	 */
-	public static void write(HttpServletResponse response, byte[] result) {
-		try {
-			if(result == null){
-				return;
-			}
-			OutputStream out = response.getOutputStream();
-			out.write(result);
-			out.flush();
-			out.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 }
