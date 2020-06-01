@@ -1345,3 +1345,275 @@ Caused by: java.lang.IllegalArgumentException: com.bingbing.bingxue.webservice.c
 [INFO ][2019-12-12 19:50:16,068][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Dec 12 19:50:15 CST 2019]; parent: Root WebApplicationContext
 [INFO ][2019-12-12 19:50:16,148][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
 [INFO ][2019-12-12 19:50:16,185][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 816 ms
+[INFO ][2020-06-01 10:36:47,309][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 10:36:47,354][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 10:36:47 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 10:36:47,391][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 10:36:47,650][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 10:36:47,797][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 10:36:47,850][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 10:36:48,468][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 10:36:48,987][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 10:36:49,407][ServerImpl:85] Setting the server's publish address to be /hello
+[WARN ][2020-06-01 10:36:49,427][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clientFactory' defined in class path resource [spring-cxf-client.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'serviceClass'; nested exception is java.lang.IllegalArgumentException: Cannot find class [com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap]
+[ERROR][2020-06-01 10:36:49,429][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clientFactory' defined in class path resource [spring-cxf-client.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'serviceClass'; nested exception is java.lang.IllegalArgumentException: Cannot find class [com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'serviceClass'; nested exception is java.lang.IllegalArgumentException: Cannot find class [com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap]
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:610)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertForProperty(AbstractNestablePropertyAccessor.java:617)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1536)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	... 20 more
+Caused by: java.lang.IllegalArgumentException: Cannot find class [com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:287)
+	at org.springframework.beans.propertyeditors.ClassEditor.setAsText(ClassEditor.java:63)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:468)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:441)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:199)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:590)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1720)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1571)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:284)
+	... 31 more
+[INFO ][2020-06-01 10:37:09,557][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 10:37:09,600][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 10:37:09 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 10:37:09,647][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 10:37:09,705][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 10:37:09,852][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 10:37:09,897][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 10:37:10,466][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 10:37:10,956][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 10:37:11,372][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 10:37:11,415][ContextLoader:344] Root WebApplicationContext: initialization completed in 1856 ms
+[INFO ][2020-06-01 10:37:11,431][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 10:37:11,433][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:37:11 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:37:11,434][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 10:37:11,746][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 10:37:11,747][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 10:37:11,748][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 10:37:11,749][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 10:37:11,786][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 10:37:12,089][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:37:11 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:37:12,124][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:37:11 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:37:12,199][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 10:37:12,227][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 796 ms
+[INFO ][2020-06-01 10:38:12,296][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:37:11 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:38:12,299][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Mon Jun 01 10:37:09 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 10:38:13,950][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 10:38:13,987][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 10:38:13 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 10:38:14,018][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 10:38:14,035][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 10:38:14,135][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 10:38:14,176][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 10:38:14,678][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 10:38:15,112][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 10:38:15,520][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 10:38:15,556][ContextLoader:344] Root WebApplicationContext: initialization completed in 1604 ms
+[INFO ][2020-06-01 10:38:15,570][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 10:38:15,572][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:38:15 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:38:15,573][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 10:38:15,782][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 10:38:15,784][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 10:38:15,784][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 10:38:15,785][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 10:38:15,815][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 10:38:16,053][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:38:15 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:38:16,088][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:38:15 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 10:38:16,153][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 10:38:16,180][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 609 ms
+[INFO ][2020-06-01 11:06:08,015][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 10:38:15 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 11:06:08,017][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Mon Jun 01 10:38:13 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 11:06:09,546][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 11:06:09,579][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 11:06:09 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 11:06:09,608][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 11:06:09,622][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 11:06:09,720][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 11:06:09,758][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-01 11:06:13,341][SimpleSaxErrorHandler:48] Ignored XML validation warning
+org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 68; schema_reference.4: 无法读取方案文档 'http://cxf.apache.org/schema/jaxws.xsd', 原因为 1) 无法找到文档; 2) 无法读取文档; 3) 文档的根元素不是 <xsd:schema>。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.warning(ErrorHandlerWrapper.java:99)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:392)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:306)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.reportSchemaErr(XSDHandler.java:4160)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.reportSchemaWarning(XSDHandler.java:4151)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.getSchemaDocument1(XSDHandler.java:2493)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.getSchemaDocument(XSDHandler.java:2191)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.parseSchema(XSDHandler.java:576)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader.loadSchema(XMLSchemaLoader.java:613)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.findSchemaGrammar(XMLSchemaValidator.java:2446)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:1767)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:740)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:227)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:169)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:142)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4033)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1546)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1524)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: http://cxf.apache.org/schema/jaxws.xsd
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1872)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:148)
+	at com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaParsingConfig.parse(SchemaParsingConfig.java:582)
+	at com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaParsingConfig.parse(SchemaParsingConfig.java:685)
+	at com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOMParser.parse(SchemaDOMParser.java:530)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.getSchemaDocument(XSDHandler.java:2179)
+	... 53 more
+[ERROR][2020-06-01 11:06:13,351][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from URL location [classpath:spring-cxf-client.xml]
+Offending resource: class path resource [spring.xml]; nested exception is org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 16 in XML document from class path resource [spring-cxf-client.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 68; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 'jaxws:client' 的声明。
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:76)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:233)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:169)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:142)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4033)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1546)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1524)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 16 in XML document from class path resource [spring-cxf-client.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 68; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 'jaxws:client' 的声明。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:227)
+	... 30 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 68; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 'jaxws:client' 的声明。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:134)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator$XSIErrorReporter.reportError(XMLSchemaValidator.java:452)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.reportSchemaError(XMLSchemaValidator.java:3230)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:1911)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:740)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 35 more
+[INFO ][2020-06-01 11:06:13,358][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Mon Jun 01 11:06:09 CST 2020]; root of context hierarchy
+[WARN ][2020-06-01 11:06:13,371][AbstractApplicationContext:1005] Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Mon Jun 01 11:06:09 CST 2020]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:417)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1002)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:961)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:583)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:116)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5063)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5723)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4033)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1546)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1524)
+	at java.lang.Thread.run(Thread.java:748)
