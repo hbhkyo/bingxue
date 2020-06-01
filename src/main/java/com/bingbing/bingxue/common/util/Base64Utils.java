@@ -20,6 +20,15 @@ public class Base64Utils {
 		}
 		return "";
 	}
+	
+	/**
+	 * Base64加密
+	 * @param plaintext
+	 * @return ciphertext
+	 */
+	public static String encode(byte[] plaintext){
+		return new Base64().encodeToString(plaintext);
+	}
 
 	
 	/**
@@ -35,4 +44,5 @@ public class Base64Utils {
 		}
 		return "";
 	}
+	
 }

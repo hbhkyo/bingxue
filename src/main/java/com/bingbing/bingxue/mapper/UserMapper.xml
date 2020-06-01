@@ -64,7 +64,7 @@
  		 </association>
 	</resultMap> -->
 	
-	<resultMap id="userResultMap" type="User">
+	<!-- <resultMap id="userResultMap" type="User">
  		<id property="id" column="id" />
 		<result property="name" column="name" />
 		<result property="nickname" column="nickname" />
@@ -77,11 +77,11 @@
 		<result property="updateDate" column="update_date" />
 		<result property="creatUser" column="creat_user" />
 		<result property="updateUser" column="update_user" />
-		<!-- 一对多 -->
+		一对多
  		<collection property="cards" ofType="Card" resultMap="cardResultMap" columnPrefix="card_"/>
- 		<!-- 一对一 -->
- 		<!-- <association property="card" column="user_id" javaType="Card" resultMap="cardResultMap" columnPrefix="card_"/> -->
-	</resultMap>
+ 		一对一
+ 		<association property="card" column="user_id" javaType="Card" resultMap="cardResultMap" columnPrefix="card_"/>
+	</resultMap> -->
 
 	<resultMap id="cardResultMap" type="Card">
 	    <id property="id" column="id"/>
@@ -96,7 +96,13 @@
 		<result property="updateUser" column="update_user" />
 	</resultMap>
 	
-	<select id="select" parameterType="User" resultMap="userResultMap">
+	<select id="select" parameterType="User" resultType="User">
+		select user.*
+		from t_user_info user
+		where user.mobile = #{mobile}
+	</select>
+	
+	<!-- <select id="select" parameterType="User" resultMap="userResultMap">
 		select user.id , user.name ,user.nickname ,user.age ,user.birthday , user.mobile , user.id_no , user.is_valid ,
 		user.creat_date, user.update_date , user.creat_user , user.update_user ,
 		card.id as card_id , card.user_id as card_user_id ,card.card_no as card_card_no ,card.card_name as card_card_name ,
@@ -107,7 +113,7 @@
 		<if test="name != null">
     		and user.name like #{name}
   		</if>
-	</select>
+	</select> -->
 	
 	<!-- 动态SQL。
 	if

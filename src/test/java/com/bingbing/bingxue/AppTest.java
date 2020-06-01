@@ -1,38 +1,32 @@
 package com.bingbing.bingxue;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import com.bingbing.bingxue.webservice.client.ArrayOfString;
+import com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap;
+import com.bingbing.bingxue.webservice.client.WeatherWebServiceSoap;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {  
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-cxf-client.xml");  
+		
+        try {
+			IpAddressSearchWebServiceSoap client = (IpAddressSearchWebServiceSoap) ctx.getBean("client");  
+			ArrayOfString result = client.getCountryCityByIp("120.202.26.116") ;
+			System.out.println(result);
+		} catch (BeansException e) {
+			e.printStackTrace();
+		}  
+		System.out.println("--------------------------------------------------------------------------");
+		try {
+			WeatherWebServiceSoap client2 = (WeatherWebServiceSoap) ctx.getBean("client2");  
+			 ArrayOfString result2 = client2.getWeatherbyCityName("武汉");
+			System.out.println(result2);
+		} catch (BeansException e) {
+			e.printStackTrace();
+		}  
+    }  
 }

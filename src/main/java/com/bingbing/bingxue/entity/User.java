@@ -7,8 +7,8 @@ import java.util.List;
 public class User {
 	
 	private Integer id ;
-	private String name ;
-	private String nickname ;
+	/*private String name ;
+	private String nickname ;*/
 	private Integer age ;
 	private Date birthday ;
 	private String mobile;
@@ -32,7 +32,7 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
+	/*public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -43,7 +43,7 @@ public class User {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
-	}
+	}*/
 	public Integer getAge() {
 		return age;
 	}
@@ -101,7 +101,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", nickname=" + nickname + ", age=" + age + ", birthday="
+		return "User [id=" + id + ", name=" + "" + ", nickname=" + "" + ", age=" + age + ", birthday="
 				+ birthday + ", mobile=" + mobile + ", idNo=" + idNo + ", isValid=" + isValid + ", creatUser="
 				+ creatUser + ", updateUser=" + updateUser + ", creatDate=" + creatDate + ", updateDate=" + updateDate
 				+ ", cards=" + cards + "]";
