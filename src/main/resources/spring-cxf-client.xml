@@ -1,20 +1,15 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:jaxws="http://cxf.apache.org/jaxws"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
-	http://cxf.apache.org/jaxws http://cxf.apache.org/schema/jaxws.xsd">
-	
-	<bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
-		<property name="address" value="http://www.webxml.com.cn/WebServices/IpAddressSearchWebService.asmx" />
-		<property name="serviceClass" value="com.bingbing.bingxue.webservice.client.IpAddressSearchWebServiceSoap" />
-	</bean>
-	<bean id="client" factory-bean="clientFactory" factory-method="create" /> 
-	
-	
-	<bean id="clientFactory2" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
-		<property name="address" value="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx" />
-		<property name="serviceClass" value="com.bingbing.bingxue.webservice.client.WeatherWebServiceSoap" />
-	</bean>
-	<bean id="client2" factory-bean="clientFactory2" factory-method="create" /> 
-
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:jaxws="http://cxf.apache.org/jaxws"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://cxf.apache.org/jaxws  
+        http://cxf.apache.org/schemas/jaxws.xsd">  
+	<jaxws:client
+            id="userClient"
+            serviceClass="cn.com.webxml.IpAddressSearchWebServiceSoap"
+            address="http://www.webxml.com.cn/WebServices/IpAddressSearchWebService.asmx?wsdl">
+    </jaxws:client>
+    
 </beans>
