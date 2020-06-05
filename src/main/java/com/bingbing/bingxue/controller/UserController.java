@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bingbing.bingxue.common.log.Log;
 import com.bingbing.bingxue.entity.User;
@@ -19,21 +20,20 @@ public class UserController {
 	
 	@RequestMapping(value = "/index") 
 	public String index(){
-		User u = new User();
-		u.setMobile("18627058835");
-		userService.login(u);
-		Log.info("第一个查询");
+		Log.info("index");
 		return "index";
 	}
 	
-	@RequestMapping(value = "/user/login", method = RequestMethod.GET) 
+	@RequestMapping(value = "/login", method = RequestMethod.GET) 
+	@ResponseBody
 	public String login(){
+		Log.info("login");
 		return "login";
 	}
 	
-	@RequestMapping(value = "/user/login", method = RequestMethod.POST) 
+	@RequestMapping(value = "/detail", method = RequestMethod.POST) 
 	public String login(@ModelAttribute User user){
-		Log.info(user.toString());
-		return "index";
+		Log.info("login");
+		return "detail";
 	}
 }

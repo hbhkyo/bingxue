@@ -310,4 +310,5 @@
 </div>
 <script src="./resources/js/jquery-1.11.3.js"></script>
 <script src="./resources/js/bootstrap.js"></script>
+<script src="./resources/js/vue-dev-2.6.12.js"></script>
 </html>

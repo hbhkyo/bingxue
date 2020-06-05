@@ -1617,3 +1617,1117 @@ java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refr
 	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1556)
 	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1524)
 	at java.lang.Thread.run(Thread.java:748)
+[INFO ][2020-06-01 19:54:52,487][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 19:54:52,525][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 19:54:52 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 19:54:52,562][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 19:54:52,618][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 19:54:52,713][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 19:54:52,758][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-01 19:54:53,004][ClassPathMapperScanner:167] No MyBatis mapper was found in '[com.bingbing.bingxue.mapper]' package. Please check your configuration.
+[INFO ][2020-06-01 19:54:53,461][DruidDataSource:785] {dataSource-1} inited
+[WARN ][2020-06-01 19:54:53,602][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+[ERROR][2020-06-01 19:54:53,604][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:96)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 24 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:166)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:106)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:159)
+	... 27 more
+[INFO ][2020-06-01 19:58:05,575][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 19:58:05,617][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 19:58:05 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 19:58:05,650][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 19:58:05,719][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 19:58:05,818][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 19:58:05,861][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-01 19:58:06,084][ClassPathMapperScanner:167] No MyBatis mapper was found in '[com.bingbing.bingxue.mapper]' package. Please check your configuration.
+[INFO ][2020-06-01 19:58:06,523][DruidDataSource:785] {dataSource-1} inited
+[WARN ][2020-06-01 19:58:06,660][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+[ERROR][2020-06-01 19:58:06,662][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:96)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 24 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:166)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:106)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:159)
+	... 27 more
+[INFO ][2020-06-01 20:00:28,508][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:00:28,551][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:00:28 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:00:28,583][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:00:28,643][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:00:28,744][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:00:28,786][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-01 20:00:29,019][ClassPathMapperScanner:167] No MyBatis mapper was found in '[com.bingbing.bingxue.mapper]' package. Please check your configuration.
+[INFO ][2020-06-01 20:00:29,477][DruidDataSource:785] {dataSource-1} inited
+[WARN ][2020-06-01 20:00:29,642][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+[ERROR][2020-06-01 20:00:29,645][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:96)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 24 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:166)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:106)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:159)
+	... 27 more
+[INFO ][2020-06-01 20:02:04,192][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:02:04,231][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:02:04 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:02:04,265][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:02:04,328][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:02:04,417][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:02:04,463][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-01 20:02:04,703][ClassPathMapperScanner:167] No MyBatis mapper was found in '[com.bingbing.bingxue.mapper]' package. Please check your configuration.
+[INFO ][2020-06-01 20:02:05,149][DruidDataSource:785] {dataSource-1} inited
+[WARN ][2020-06-01 20:02:05,292][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+[ERROR][2020-06-01 20:02:05,295][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:96)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 24 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:166)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:106)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:159)
+	... 27 more
+[INFO ][2020-06-01 20:03:03,527][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:03:03,569][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:03:03 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:03:03,604][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:03:03,664][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:03:03,800][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:03:03,846][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 20:03:04,452][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 20:03:04,979][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 20:03:05,414][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 20:03:05,457][ContextLoader:344] Root WebApplicationContext: initialization completed in 1928 ms
+[INFO ][2020-06-01 20:03:05,473][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 20:03:05,474][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:03:05 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:03:05,475][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 20:03:05,798][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 20:03:05,799][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 20:03:05,799][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 20:03:05,800][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 20:03:05,800][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme-vue]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-01 20:03:05,828][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 20:03:06,106][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:03:05 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:03:06,144][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:03:05 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:03:06,214][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 20:03:06,246][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 773 ms
+[INFO ][2020-06-01 20:04:01,335][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:04:01,376][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:04:01 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:04:01,427][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:04:01,482][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:04:01,614][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:04:01,660][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 20:04:02,296][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 20:04:02,853][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 20:04:03,261][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 20:04:03,306][ContextLoader:344] Root WebApplicationContext: initialization completed in 1969 ms
+[INFO ][2020-06-01 20:04:03,324][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 20:04:03,327][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:04:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:04:03,328][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 20:04:03,625][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 20:04:03,627][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 20:04:03,627][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 20:04:03,628][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 20:04:03,628][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-01 20:04:03,661][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 20:04:03,971][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:04:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:04:04,010][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:04:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:04:04,079][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 20:04:04,106][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 781 ms
+[INFO ][2020-06-01 20:06:21,788][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:06:21,830][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:06:21 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:06:21,867][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:06:21,934][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:06:22,060][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:06:22,112][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 20:06:22,729][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 20:06:23,284][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 20:06:23,758][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 20:06:23,803][ContextLoader:344] Root WebApplicationContext: initialization completed in 2013 ms
+[INFO ][2020-06-01 20:06:23,819][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 20:06:23,821][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:06:23 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:06:23,821][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 20:06:24,173][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 20:06:24,174][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 20:06:24,175][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 20:06:24,175][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 20:06:24,176][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-01 20:06:24,205][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 20:06:24,498][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:06:23 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:06:24,537][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:06:23 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:06:24,606][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 20:06:24,642][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 823 ms
+[INFO ][2020-06-01 20:18:48,543][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:06:23 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:18:48,554][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Mon Jun 01 20:06:21 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:18:51,903][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:18:51,942][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:18:51 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:18:51,983][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:18:52,040][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:18:52,161][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:18:52,210][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 20:18:52,821][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 20:18:53,340][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 20:18:53,780][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 20:18:53,830][ContextLoader:344] Root WebApplicationContext: initialization completed in 1924 ms
+[INFO ][2020-06-01 20:18:53,955][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 20:18:53,957][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:18:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:18:53,958][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 20:18:54,205][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 20:18:54,206][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 20:18:54,206][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 20:18:54,207][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 20:18:54,207][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-01 20:18:54,236][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 20:18:54,529][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:18:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:18:54,566][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:18:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:18:54,635][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 20:18:54,664][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 709 ms
+[INFO ][2020-06-01 20:21:51,101][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:18:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:21:51,108][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Mon Jun 01 20:18:51 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:21:54,543][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-01 20:21:54,588][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Mon Jun 01 20:21:54 CST 2020]; root of context hierarchy
+[INFO ][2020-06-01 20:21:54,622][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-01 20:21:54,784][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-01 20:21:54,914][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-01 20:21:54,969][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-01 20:21:55,596][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-01 20:21:56,103][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-01 20:21:56,512][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-01 20:21:56,557][ContextLoader:344] Root WebApplicationContext: initialization completed in 2012 ms
+[INFO ][2020-06-01 20:21:56,680][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-01 20:21:56,682][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:21:56 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:21:56,682][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-01 20:21:56,934][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-01 20:21:56,936][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-01 20:21:56,936][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-01 20:21:56,937][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-01 20:21:56,937][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-01 20:21:56,972][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-01 20:21:57,284][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:21:56 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:21:57,321][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jun 01 20:21:56 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-01 20:21:57,393][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-01 20:21:57,421][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 741 ms
+[INFO ][2020-06-04 11:15:50,628][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 11:15:50,682][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 11:15:50 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:15:50,736][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 11:15:50,796][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 11:15:50,934][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 11:15:50,985][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 11:15:51,646][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 11:15:52,181][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 11:15:52,677][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 11:15:52,727][ContextLoader:344] Root WebApplicationContext: initialization completed in 2098 ms
+[INFO ][2020-06-04 11:15:52,748][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 11:15:52,752][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:15:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:15:52,752][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 11:15:53,157][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 11:15:53,159][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 11:15:53,159][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 11:15:53,160][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 11:15:53,160][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-04 11:15:53,191][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 11:15:53,491][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:15:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:15:53,527][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:15:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:15:53,599][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 11:15:53,627][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 879 ms
+[INFO ][2020-06-04 11:31:11,898][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 11:31:11,939][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 11:31:11 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:31:11,980][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 11:31:12,039][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 11:31:12,167][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 11:31:12,214][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 11:31:12,862][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 11:31:13,439][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 11:31:13,902][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 11:31:13,947][ContextLoader:344] Root WebApplicationContext: initialization completed in 2048 ms
+[INFO ][2020-06-04 11:31:13,968][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 11:31:13,970][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:31:13 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:31:13,971][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 11:31:14,330][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 11:31:14,331][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 11:31:14,331][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 11:31:14,332][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 11:31:14,332][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-04 11:31:14,367][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 11:31:14,685][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:31:13 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:31:14,723][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:31:13 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:31:14,792][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 11:31:14,822][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 854 ms
+[INFO ][2020-06-04 11:31:57,183][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:31:13 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:31:57,223][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 11:31:11 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:32:01,066][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 11:32:01,108][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 11:32:01 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:32:01,143][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 11:32:01,199][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 11:32:01,330][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 11:32:01,372][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 11:32:01,977][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 11:32:02,508][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 11:32:02,990][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 11:32:03,035][ContextLoader:344] Root WebApplicationContext: initialization completed in 1967 ms
+[INFO ][2020-06-04 11:32:03,154][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 11:32:03,159][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:32:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:32:03,159][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 11:32:03,439][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 11:32:03,440][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 11:32:03,441][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 11:32:03,442][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 11:32:03,442][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-04 11:32:03,479][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 11:32:03,841][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:32:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:32:03,883][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:32:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:32:03,958][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 11:32:04,004][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 848 ms
+[INFO ][2020-06-04 11:32:46,151][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:32:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:32:46,157][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 11:32:01 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:33:07,642][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 11:33:07,715][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 11:33:07 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 11:33:07,838][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 11:33:07,977][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 11:33:08,333][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 11:33:08,444][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 11:33:09,327][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 11:33:09,963][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 11:33:10,388][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 11:33:10,430][ContextLoader:344] Root WebApplicationContext: initialization completed in 2786 ms
+[INFO ][2020-06-04 11:33:10,550][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 11:33:10,552][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:33:10 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:33:10,552][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 11:33:10,816][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 11:33:10,818][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 11:33:10,818][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 11:33:10,819][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 11:33:10,819][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-04 11:33:10,850][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 11:33:11,182][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:33:10 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:33:11,230][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:33:10 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 11:33:11,309][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 11:33:11,342][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 792 ms
+[INFO ][2020-06-04 13:40:34,970][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 11:33:10 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 13:40:34,979][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 11:33:07 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:03:34,549][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:03:34,598][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:03:34 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:03:34,649][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:03:34,712][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:03:34,863][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:03:34,913][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:03:35,562][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:03:36,157][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:03:36,584][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:03:36,637][ContextLoader:344] Root WebApplicationContext: initialization completed in 2086 ms
+[INFO ][2020-06-04 16:03:36,654][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:03:36,656][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:03:36 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:03:36,656][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:03:37,102][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:03:37,104][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:03:37,104][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:03:37,105][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:03:37,105][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/eleme]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.eleme()
+[INFO ][2020-06-04 16:03:37,144][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:03:37,470][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:03:36 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:03:37,507][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:03:36 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:03:37,583][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:03:37,618][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 964 ms
+[INFO ][2020-06-04 16:21:48,888][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:03:36 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:21:48,896][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:03:34 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:21:50,763][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:21:50,818][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:21:50 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:21:50,848][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:21:50,866][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:21:50,995][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:21:51,039][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:21:51,534][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:21:52,292][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:21:52,666][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:21:52,700][ContextLoader:344] Root WebApplicationContext: initialization completed in 1933 ms
+[INFO ][2020-06-04 16:21:52,721][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:21:52,723][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:21:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:21:52,723][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:21:52,919][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:21:52,922][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:21:52,922][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:21:52,922][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:21:52,951][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:21:53,225][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:21:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:21:53,265][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:21:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:21:53,348][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:21:53,378][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 657 ms
+[INFO ][2020-06-04 16:22:13,411][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:21:52 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:13,413][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:21:50 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:22:15,205][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:22:15,240][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:22:15 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:22:15,269][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:22:15,288][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:22:15,398][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:22:15,439][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:22:15,898][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:22:16,360][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:22:16,798][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:22:16,834][ContextLoader:344] Root WebApplicationContext: initialization completed in 1628 ms
+[INFO ][2020-06-04 16:22:16,851][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:22:16,853][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:16 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:16,853][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:22:17,086][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:22:17,087][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:22:17,088][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:22:17,090][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:22:17,122][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:22:17,379][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:16 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:17,413][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:16 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:17,504][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:22:17,537][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 686 ms
+[INFO ][2020-06-04 16:22:27,558][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:16 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:27,563][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:22:15 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:22:29,270][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:22:29,310][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:22:29 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:22:29,342][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:22:29,358][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:22:29,459][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:22:29,502][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:22:30,248][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:22:30,705][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:22:31,051][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:22:31,094][ContextLoader:344] Root WebApplicationContext: initialization completed in 1821 ms
+[INFO ][2020-06-04 16:22:31,114][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:22:31,115][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:31 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:31,116][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:22:31,315][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index2]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:22:31,316][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:22:31,317][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:22:31,317][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:22:31,349][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:22:31,598][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:31 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:31,635][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:31 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:22:31,723][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:22:31,753][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 639 ms
+[INFO ][2020-06-04 16:29:32,255][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:22:31 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:32,257][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:22:29 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:29:33,917][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:29:33,950][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:29:33 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:29:33,980][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:29:33,994][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:29:34,088][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:29:34,119][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:29:34,557][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:29:34,995][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:29:35,326][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:29:35,362][ContextLoader:344] Root WebApplicationContext: initialization completed in 1444 ms
+[INFO ][2020-06-04 16:29:35,378][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:29:35,380][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:35 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:35,380][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:29:35,564][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:29:35,565][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:29:35,566][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:29:35,566][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/user/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:29:35,601][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:29:35,877][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:35 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:35,921][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:35 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:36,011][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:29:36,047][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 669 ms
+[INFO ][2020-06-04 16:29:46,070][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:35 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:46,074][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:29:33 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:29:47,557][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:29:47,591][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:29:47 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:29:47,623][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:29:47,637][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:29:47,726][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:29:47,759][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:29:48,289][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:29:48,750][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:29:49,116][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:29:49,158][ContextLoader:344] Root WebApplicationContext: initialization completed in 1600 ms
+[INFO ][2020-06-04 16:29:49,177][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:29:49,179][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:49 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:49,179][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:29:49,539][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:29:49,540][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:29:49,540][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:29:49,540][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:29:49,568][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:29:49,855][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:49 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:49,898][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:49 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:29:49,997][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:29:50,041][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 864 ms
+[INFO ][2020-06-04 16:30:00,071][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:29:49 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:30:00,073][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:29:47 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:30:01,569][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:30:01,608][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:30:01 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:30:01,642][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:30:01,659][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:30:01,755][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:30:01,791][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:30:02,227][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:30:02,805][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:30:03,158][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:30:03,196][ContextLoader:344] Root WebApplicationContext: initialization completed in 1626 ms
+[INFO ][2020-06-04 16:30:03,212][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:30:03,214][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:30:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:30:03,214][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:30:03,499][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:30:03,503][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:30:03,503][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:30:03,503][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:30:03,540][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:30:03,820][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:30:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:30:03,860][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:30:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:30:03,937][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:30:03,965][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 753 ms
+[WARN ][2020-06-04 16:33:28,475][DefaultHandlerExceptionResolver:215] Request method 'GET' not supported
+[WARN ][2020-06-04 16:33:54,117][DefaultHandlerExceptionResolver:215] Request method 'GET' not supported
+[INFO ][2020-06-04 16:33:54,240][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:30:03 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:33:54,242][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:30:01 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:33:55,723][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:33:55,756][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:33:55 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:33:55,786][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:33:55,800][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:33:55,904][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:33:55,943][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:33:56,379][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:33:56,804][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:33:57,160][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:33:57,199][ContextLoader:344] Root WebApplicationContext: initialization completed in 1475 ms
+[INFO ][2020-06-04 16:33:57,216][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:33:57,218][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:33:57 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:33:57,218][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:33:57,413][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:33:57,413][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:33:57,414][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:33:57,414][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:33:57,444][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:33:57,689][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:33:57 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:33:57,726][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:33:57 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:33:57,802][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:33:57,831][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 615 ms
+[INFO ][2020-06-04 16:34:17,865][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:33:57 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:34:17,867][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:33:55 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:34:19,352][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:34:19,388][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:34:19 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:34:19,419][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:34:19,433][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:34:19,523][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:34:19,559][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:34:20,001][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:34:20,452][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:52:36,734][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 16:52:36,778][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 16:52:36 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 16:52:36,822][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 16:52:36,881][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 16:52:37,010][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 16:52:37,060][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 16:52:37,724][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 16:52:38,267][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 16:52:38,715][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 16:52:38,767][ContextLoader:344] Root WebApplicationContext: initialization completed in 2031 ms
+[INFO ][2020-06-04 16:52:38,903][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 16:52:38,907][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:52:38 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:52:38,907][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 16:52:39,130][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 16:52:39,131][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 16:52:39,132][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 16:52:39,132][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 16:52:39,167][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 16:52:39,520][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:52:38 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:52:39,560][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:52:38 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:52:39,640][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 16:52:39,675][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 772 ms
+[INFO ][2020-06-04 16:53:07,878][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 16:52:38 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 16:53:07,882][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 16:52:36 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 17:06:30,281][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 17:06:30,332][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 17:06:30 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 17:06:30,388][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 17:06:30,479][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 17:06:30,658][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 17:06:30,739][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 17:06:31,616][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 17:06:32,342][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 17:06:32,839][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 17:06:32,899][ContextLoader:344] Root WebApplicationContext: initialization completed in 2616 ms
+[INFO ][2020-06-04 17:06:33,051][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 17:06:33,054][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:06:33 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:06:33,055][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 17:06:33,308][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 17:06:33,309][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 17:06:33,309][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 17:06:33,310][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 17:06:33,341][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 17:06:33,707][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:06:33 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:06:33,769][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:06:33 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:06:33,923][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 17:06:33,997][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 945 ms
+[INFO ][2020-06-04 17:20:38,102][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:06:33 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:20:38,114][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Thu Jun 04 17:06:30 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 17:20:42,697][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-04 17:20:42,774][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Thu Jun 04 17:20:42 CST 2020]; root of context hierarchy
+[INFO ][2020-06-04 17:20:42,831][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-04 17:20:42,920][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-04 17:20:43,100][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-04 17:20:43,161][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-04 17:20:43,913][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-04 17:20:44,627][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-04 17:20:45,257][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-04 17:20:45,323][ContextLoader:344] Root WebApplicationContext: initialization completed in 2624 ms
+[INFO ][2020-06-04 17:20:45,467][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-04 17:20:45,469][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:20:45 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:20:45,469][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-04 17:20:45,788][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-04 17:20:45,790][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-04 17:20:45,791][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-04 17:20:45,793][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-04 17:20:45,833][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-04 17:20:46,215][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:20:45 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:20:46,290][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jun 04 17:20:45 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-04 17:20:46,523][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-04 17:20:46,565][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 1098 ms
+[INFO ][2020-06-05 10:36:54,965][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 10:36:55,013][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 10:36:55 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 10:36:55,056][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 10:36:55,144][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 10:36:55,238][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 10:36:55,283][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[WARN ][2020-06-05 10:36:55,545][ClassPathMapperScanner:167] No MyBatis mapper was found in '[com.bingbing.bingxue.mapper]' package. Please check your configuration.
+[INFO ][2020-06-05 10:36:56,000][DruidDataSource:785] {dataSource-1} inited
+[WARN ][2020-06-05 10:36:56,176][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+[ERROR][2020-06-05 10:36:56,178][ContextLoader:350] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5016)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5528)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:96)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 24 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'User'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:166)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:106)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.bingbing.bingxue.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:159)
+	... 27 more
+[INFO ][2020-06-05 10:39:39,852][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 10:39:39,895][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 10:39:39 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 10:39:39,935][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 10:39:39,988][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 10:39:40,109][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 10:39:40,156][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 10:39:40,731][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 10:39:41,242][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 10:39:41,663][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 10:39:41,707][ContextLoader:344] Root WebApplicationContext: initialization completed in 1853 ms
+[INFO ][2020-06-05 10:39:41,723][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 10:39:41,725][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 10:39:41 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 10:39:41,725][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 10:39:42,048][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 10:39:42,050][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 10:39:42,050][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 10:39:42,051][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 10:39:42,087][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 10:39:42,396][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 10:39:41 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 10:39:42,437][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 10:39:41 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 10:39:42,530][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 10:39:42,562][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 839 ms
+[INFO ][2020-06-05 15:35:42,489][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 10:39:41 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:35:42,497][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 10:39:39 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 15:35:44,743][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 15:35:44,785][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 15:35:44 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 15:35:44,814][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 15:35:44,851][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 15:35:44,980][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 15:35:45,024][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 15:35:45,602][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 15:35:46,063][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 15:35:46,421][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 15:35:46,462][ContextLoader:344] Root WebApplicationContext: initialization completed in 1718 ms
+[INFO ][2020-06-05 15:35:46,484][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 15:35:46,486][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:35:46 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:35:46,486][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 15:35:46,699][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 15:35:46,700][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 15:35:46,700][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 15:35:46,701][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 15:35:46,734][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 15:35:47,033][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:35:46 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:35:47,070][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:35:46 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:35:47,150][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 15:35:47,179][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 694 ms
+[INFO ][2020-06-05 15:35:57,203][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:35:46 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:35:57,205][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 15:35:44 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 15:35:58,713][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 15:35:58,748][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 15:35:58 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 15:35:58,777][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 15:35:58,792][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 15:35:58,883][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 15:35:58,917][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 15:35:59,403][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 15:35:59,871][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 15:36:00,297][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 15:36:00,337][ContextLoader:344] Root WebApplicationContext: initialization completed in 1622 ms
+[INFO ][2020-06-05 15:36:00,354][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 15:36:00,357][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:36:00 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:36:00,359][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 15:36:00,581][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 15:36:00,583][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 15:36:00,583][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 15:36:00,584][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 15:36:00,611][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 15:36:00,844][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:36:00 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:36:00,880][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 15:36:00 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 15:36:00,953][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 15:36:00,979][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 625 ms
+[INFO ][2020-06-05 15:36:01,456][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:38:44,448][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:38:58,868][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:39:55,056][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:40:15,851][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:40:20,176][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:40:29,021][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:41:21,044][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:41:33,701][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:05,339][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:23,526][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:23,716][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:23,910][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,089][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,254][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,429][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,597][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,771][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:24,941][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:25,102][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:25,264][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:43:25,425][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:23,518][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:25,114][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:25,307][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:25,475][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:25,645][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:25,801][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:44:33,402][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:45:06,501][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:46:48,362][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:35,256][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:35,380][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:35,561][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:35,722][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:35,879][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:36,054][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:47:36,242][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:48:13,417][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:48:45,157][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:49,574][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:50,619][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:50,960][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:51,232][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:51,426][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:51,623][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:51,830][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:52,015][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:52,174][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:52,371][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:50:52,530][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:51:06,562][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:51:11,851][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:08,537][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:15,764][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:15,909][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:16,068][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:16,223][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:16,403][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:16,572][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:57:16,713][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:59:57,360][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 15:59:58,224][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:00:28,524][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:00:55,097][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:14:38,792][Log:10] com.bingbing.bingxue.controller.UserController.index() LineNumber==22 index
+[INFO ][2020-06-05 16:14:44,344][Log:10] com.bingbing.bingxue.controller.UserController.index() LineNumber==22 index
+[INFO ][2020-06-05 16:15:00,119][Log:10] com.bingbing.bingxue.controller.UserController.index() LineNumber==22 index
+[INFO ][2020-06-05 16:20:24,940][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:22:57,440][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:24:51,477][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:25:30,459][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:25:31,510][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:25:49,642][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 16:25:49,687][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 16:25:49 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:25:49,726][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 16:25:49,788][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 16:25:49,923][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 16:25:49,976][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 16:25:50,580][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 16:25:51,140][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 16:25:51,593][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 16:25:51,635][ContextLoader:344] Root WebApplicationContext: initialization completed in 1992 ms
+[INFO ][2020-06-05 16:25:51,651][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 16:25:51,653][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:25:51 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:25:51,653][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 16:25:51,986][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 16:25:51,988][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 16:25:51,988][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 16:25:51,989][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 16:25:52,021][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 16:25:52,367][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:25:51 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:25:52,410][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:25:51 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:25:52,481][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 16:25:52,510][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 859 ms
+[INFO ][2020-06-05 16:26:14,020][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:14,195][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:14,371][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:14,532][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:14,699][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:14,882][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:26:15,078][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:28:30,088][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 16:28:30,131][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 16:28:30 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:28:30,164][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 16:28:30,229][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 16:28:30,351][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 16:28:30,394][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 16:28:31,020][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 16:28:31,600][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 16:28:32,046][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 16:28:32,092][ContextLoader:344] Root WebApplicationContext: initialization completed in 2002 ms
+[INFO ][2020-06-05 16:28:32,108][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 16:28:32,109][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:28:32 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:28:32,110][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 16:28:32,441][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 16:28:32,442][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 16:28:32,442][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 16:28:32,443][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 16:28:32,472][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 16:28:32,771][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:28:32 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:28:32,816][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:28:32 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:28:32,897][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 16:28:32,928][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 820 ms
+[INFO ][2020-06-05 16:28:44,577][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:28:45,235][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:31:30,369][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:31:44,745][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:32:07,547][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:32:59,369][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==28 login
+[INFO ][2020-06-05 16:38:33,656][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:28:32 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:38:33,663][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 16:28:30 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:38:35,542][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 16:38:35,604][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 16:38:35 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:38:35,653][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 16:38:35,681][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 16:38:35,794][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 16:38:35,846][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 16:38:36,305][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 16:38:36,863][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 16:38:37,223][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 16:38:37,259][ContextLoader:344] Root WebApplicationContext: initialization completed in 1716 ms
+[INFO ][2020-06-05 16:38:37,278][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 16:38:37,280][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:38:37 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:38:37,280][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 16:38:37,485][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 16:38:37,486][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 16:38:37,486][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 16:38:37,486][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 16:38:37,514][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 16:38:37,782][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:38:37 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:38:37,823][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:38:37 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:38:37,901][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 16:38:37,928][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 650 ms
+[INFO ][2020-06-05 16:38:46,503][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==30 login
+[INFO ][2020-06-05 16:43:59,947][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==30 login
+[WARN ][2020-06-05 16:54:50,083][DefaultHandlerExceptionResolver:215] Request method 'POST' not supported
+[INFO ][2020-06-05 16:55:19,096][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:38:37 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:55:19,098][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 16:38:35 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:55:20,776][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 16:55:20,815][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 16:55:20 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 16:55:20,848][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 16:55:20,869][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 16:55:21,038][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 16:55:21,096][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 16:55:21,554][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 16:55:22,002][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 16:55:22,365][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 16:55:22,401][ContextLoader:344] Root WebApplicationContext: initialization completed in 1624 ms
+[INFO ][2020-06-05 16:55:22,416][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 16:55:22,418][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:55:22 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:55:22,418][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 16:55:22,646][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 16:55:22,648][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 16:55:22,648][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 16:55:22,648][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 16:55:22,680][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 16:55:22,950][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:55:22 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:55:22,993][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 16:55:22 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 16:55:23,072][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 16:55:23,100][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 684 ms
+[INFO ][2020-06-05 16:55:24,526][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 16:55:58,804][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 16:57:49,527][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 16:58:59,133][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:00:01,797][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:09:37,829][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 17:09:37,875][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 17:09:37 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:09:37,911][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 17:09:37,973][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 17:09:38,099][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 17:09:38,145][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 17:09:38,740][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 17:09:39,270][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 17:09:39,677][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 17:09:39,720][ContextLoader:344] Root WebApplicationContext: initialization completed in 1889 ms
+[INFO ][2020-06-05 17:09:39,734][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 17:09:39,736][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:09:39 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:09:39,736][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 17:09:40,049][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 17:09:40,050][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 17:09:40,051][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 17:09:40,052][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 17:09:40,086][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 17:09:40,387][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:09:39 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:09:40,423][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:09:39 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:09:40,491][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 17:09:40,518][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 783 ms
+[INFO ][2020-06-05 17:09:53,636][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:15:17,984][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 17:15:18,026][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 17:15:18 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:15:18,059][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 17:15:18,117][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 17:15:18,256][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 17:15:18,303][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 17:15:18,899][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 17:15:19,431][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 17:15:19,895][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 17:15:19,942][ContextLoader:344] Root WebApplicationContext: initialization completed in 1956 ms
+[INFO ][2020-06-05 17:15:19,959][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 17:15:19,961][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:15:19 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:15:19,961][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 17:15:20,293][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 17:15:20,296][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 17:15:20,296][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 17:15:20,297][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 17:15:20,328][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 17:15:20,626][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:15:19 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:15:20,663][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:15:19 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:15:20,746][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 17:15:20,777][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 818 ms
+[INFO ][2020-06-05 17:16:21,621][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:15:19 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:16:21,642][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 17:15:18 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:16:26,802][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 17:16:26,849][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 17:16:26 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:16:26,885][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 17:16:26,939][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 17:16:27,058][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 17:16:27,109][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 17:16:27,719][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 17:16:28,283][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 17:16:28,723][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 17:16:28,767][ContextLoader:344] Root WebApplicationContext: initialization completed in 1963 ms
+[INFO ][2020-06-05 17:16:28,882][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 17:16:28,884][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:16:28 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:16:28,884][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 17:16:29,129][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 17:16:29,131][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 17:16:29,131][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 17:16:29,132][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 17:16:29,160][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 17:16:29,485][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:16:28 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:16:29,529][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:16:28 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:16:29,613][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 17:16:29,644][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 761 ms
+[INFO ][2020-06-05 17:17:32,213][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:17:34,390][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:17:35,012][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==37 login
+[INFO ][2020-06-05 17:17:49,759][AbstractApplicationContext:987] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:16:28 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:17:49,763][AbstractApplicationContext:987] Closing Root WebApplicationContext: startup date [Fri Jun 05 17:16:26 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:17:51,536][ContextLoader:304] Root WebApplicationContext: initialization started
+[INFO ][2020-06-05 17:17:51,581][AbstractApplicationContext:582] Refreshing Root WebApplicationContext: startup date [Fri Jun 05 17:17:51 CST 2020]; root of context hierarchy
+[INFO ][2020-06-05 17:17:51,613][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring.xml]
+[INFO ][2020-06-05 17:17:51,631][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO ][2020-06-05 17:17:51,735][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-server.xml]
+[INFO ][2020-06-05 17:17:51,774][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-cxf-client.xml]
+[INFO ][2020-06-05 17:17:52,282][DruidDataSource:785] {dataSource-1} inited
+[INFO ][2020-06-05 17:17:52,846][ReflectionServiceFactoryBean:434] Creating Service {http://server.webservice.bingxue.bingbing.com/}HelloServiceImplService from class com.bingbing.bingxue.webservice.server.HelloService
+[INFO ][2020-06-05 17:17:53,210][ServerImpl:85] Setting the server's publish address to be /hello
+[INFO ][2020-06-05 17:17:53,250][ContextLoader:344] Root WebApplicationContext: initialization completed in 1713 ms
+[INFO ][2020-06-05 17:17:53,267][FrameworkServlet:489] FrameworkServlet 'dispatcher': initialization started
+[INFO ][2020-06-05 17:17:53,269][AbstractApplicationContext:582] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:17:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:17:53,269][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO ][2020-06-05 17:17:53,495][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/vue]}" onto public java.lang.String com.bingbing.bingxue.controller.CardController.index(com.bingbing.bingxue.entity.Card)
+[INFO ][2020-06-05 17:17:53,496][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/index]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.index()
+[INFO ][2020-06-05 17:17:53,497][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/detail],methods=[POST]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login(com.bingbing.bingxue.entity.User)
+[INFO ][2020-06-05 17:17:53,497][AbstractHandlerMethodMapping$MappingRegistry:543] Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.bingbing.bingxue.controller.UserController.login()
+[INFO ][2020-06-05 17:17:53,524][Version:17] HV000001: Hibernate Validator 5.2.2.Final
+[INFO ][2020-06-05 17:17:53,784][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:17:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:17:53,832][RequestMappingHandlerAdapter:534] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Fri Jun 05 17:17:53 CST 2020]; parent: Root WebApplicationContext
+[INFO ][2020-06-05 17:17:53,910][AbstractUrlHandlerMapping:362] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO ][2020-06-05 17:17:53,937][FrameworkServlet:508] FrameworkServlet 'dispatcher': initialization completed in 670 ms
+[INFO ][2020-06-05 17:17:54,393][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==36 login
+[INFO ][2020-06-05 17:17:54,839][Log:10] com.bingbing.bingxue.controller.UserController.login() LineNumber==36 login

@@ -83,7 +83,7 @@
  		<association property="card" column="user_id" javaType="Card" resultMap="cardResultMap" columnPrefix="card_"/>
 	</resultMap> -->
 
-	<resultMap id="cardResultMap" type="Card">
+	<!-- <resultMap id="cardResultMap" type="Card">
 	    <id property="id" column="id"/>
 	    <result property="userId" column="user_id"/>
 		<result property="cardNo" column="card_no"/>
@@ -100,7 +100,7 @@
 		select user.*
 		from t_user_info user
 		where user.mobile = #{mobile}
-	</select>
+	</select> -->
 	
 	<!-- <select id="select" parameterType="User" resultMap="userResultMap">
 		select user.id , user.name ,user.nickname ,user.age ,user.birthday , user.mobile , user.id_no , user.is_valid ,
